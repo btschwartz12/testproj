@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onefile --console --icon "C:/Users/70060/Documents/DCU_Config_Tool/data/aclara.png"  "C:/Users/70060/Documents/testproj/test.py"
