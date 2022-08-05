@@ -1,1 +1,1 @@
-pyinstaller --noconfirm --onefile --console --icon "C:/Users/70060/Documents/DCU_Config_Tool/data/aclara.png"  "C:/Users/70060/Documents/testproj/test.py"
+curl -X GET -H "Authorization: Bearer [your access token]" -H "x-tenant: [your tenant name]" -H "Accept: application/json" -H "Content-Type: application/json" " https://aclara.autodeskplm360.net/api/v3/workspaces?unlimited=true

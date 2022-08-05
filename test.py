@@ -6,9 +6,8 @@ from tkinter import *
 BASE_URL = "https://developer.api.autodesk.com/authentication/v1/authorize"
 RESPONSE_TYPE = "code"
 CLIENT_ID = "Ap9x3NhxgxSYAPcSwb8xfwdyAQ5mn2uu"
-REDIRECT_URI = "http%3A%2F%2Flocalhost%3A8000%2F"
-# REDIRECT_URI = "http%3A%2F%2Flocalhost%3A8000%2Fcallback%2F"
-SCOPE = "data:read"
+REDIRECT_URI = "http://localhost:8000/callback/"
+SCOPE = "data:read data:write"
 URL = BASE_URL + "?response_type=" + RESPONSE_TYPE + "&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URI + "&scope=" + SCOPE
 
 def go():

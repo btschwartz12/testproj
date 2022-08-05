@@ -11,11 +11,23 @@ On step 2
 Cannot get callback url with full path just localhost """
 
 from flask import Flask, request
+import requests
+import json
+
+from processor import Processor
+
 
 app = Flask(__name__)
 
 def process_code(code):
     print("******code: " + code)
+    processor = Processor(code)
+    response = processor.process(code)
+
+    return response
+
+
+
 
 
 @app.route('/')
@@ -27,8 +39,6 @@ def index():
     #print('json:', request.json)
     #print('files:', request.files)
     text = request.args.get('data', 'none')
-    code = request.args.get('code', 'none')
-    process_code(code)
     text += "\npiper is a good dog"
     return text
 
@@ -42,8 +52,9 @@ def callback():
     #print('files:', request.files)
     text = request.args.get('data', 'none')
     code = request.args.get('code', 'none')
-
-    text += "\nrowdy is a good dog"
+    response = process_code(code)
+    text += "\nROWDY ROWDY ROWDY"
+    text += "\n\n\n"+json.dumps(response, indent=2)
     return text
 
 
